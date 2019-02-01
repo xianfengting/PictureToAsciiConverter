@@ -4,12 +4,18 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ListAdapter
+import android.widget.ListView
 
 class AppMainActivity : AppCompatActivity() {
 
     private lateinit var convertButton: Button
     private lateinit var convertingPictureEditText: EditText
     private lateinit var savingPictureEditText: EditText
+    private lateinit var logListView: ListView
+
+    private lateinit var mLogMutableStringListAdapter: ListAdapter
+    private val mLogStringList = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +28,15 @@ class AppMainActivity : AppCompatActivity() {
         }
 
         convertingPictureEditText = findViewById(R.id.convertingPictureEditText)
+
         savingPictureEditText = findViewById(R.id.savingPictureEditText)
+
+        logListView = findViewById(R.id.logListView)
+        // Only for debugging
+        if (BuildConfig.DEBUG) mLogStringList.add("Test Log 1")
+        mLogMutableStringListAdapter = MutableStringListAdapter(this, mLogStringList)
+        // Only for debugging
+        if (BuildConfig.DEBUG) mLogStringList.add("Test Log 2")
     }
 
     private fun executePythonForConvertingPicture(convertingPicturePath: String, savingPictureEditText: String) {
