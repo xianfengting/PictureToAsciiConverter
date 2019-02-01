@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PictureToAsciiConverter</string>
+    
+    <string name="pictureToConvert">要转换的图片</string>
+    <string name="pictureToSave">要保存的图片</string>
+    <string name="savingPath">要保存的路径</string>
+    <string name="convert">转换</string>
 </resources>
