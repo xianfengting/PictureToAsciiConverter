@@ -30,6 +30,6 @@ class AppMainActivity : AppCompatActivity() {
         val pythonFileInputStream = assets.open("picture-to-ascii.py")
         // 读取 picture-to-ascii.py 中的内容。
         val pythonFileText = readWholeStringFromInputStream(pythonFileInputStream)
-        // TODO
+        // TODO ：执行该 python 代码。
     }
 }
