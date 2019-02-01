@@ -26,6 +26,10 @@ class AppMainActivity : AppCompatActivity() {
     }
 
     private fun executePythonForConvertingPicture(convertingPicturePath: String, savingPictureEditText: String) {
+        // 获取到 picture-to-ascii.py 文件的 InputStream 。
+        val pythonFileInputStream = assets.open("picture-to-ascii.py")
+        // 读取 picture-to-ascii.py 中的内容。
+        val pythonFileText = readWholeStringFromInputStream(pythonFileInputStream)
         // TODO
     }
 }
