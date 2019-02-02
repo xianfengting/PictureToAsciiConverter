@@ -32,7 +32,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'org.python:jython-standalone:2.7.0'
+    implementation files('libs/starcore_android_r3.0.jar')
+    // 这个 Java 调用 Python 的库对于 Android 不适用。
+    //    implementation 'org.python:jython-standalone:2.7.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
